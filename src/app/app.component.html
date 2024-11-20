@@ -7,6 +7,12 @@
         <app-todo-list [tasks]="tasks"></app-todo-list>
     </div>
     <div class="delete-all">
-        <button (click)="deleteAllTasks()">Eliminar</button>
+        <button (click)="deleteAllTasks()">
+            <link rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=delete" />
+            <span class="material-symbols-outlined">
+                delete
+            </span>
+        </button>
     </div>
 </div>
