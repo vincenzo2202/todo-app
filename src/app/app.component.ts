@@ -24,4 +24,9 @@ export class AppComponent implements OnInit {
     this.tasks.push(task);
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }
+
+  deleteAllTasks() {
+    this.tasks = [];
+    localStorage.removeItem('tasks');
+  }
 }
