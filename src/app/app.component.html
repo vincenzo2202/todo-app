@@ -1,4 +1,9 @@
-<h1>Bienvenido a Todo App</h1>
-<app-add-task (taskAdded)="onTaskAdded($event)"></app-add-task>
-<app-todo-list [tasks]="tasks"></app-todo-list>
-<router-outlet></router-outlet>
+<h1>Bienvenido a To-Do App</h1>
+<div class="app-container">
+    <div class="column left">
+        <app-add-task (taskAdded)="onTaskAdded($event)"></app-add-task>
+    </div>
+    <div class="column right">
+        <app-todo-list [tasks]="tasks"></app-todo-list>
+    </div>
+</div>

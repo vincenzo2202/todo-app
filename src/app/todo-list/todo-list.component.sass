@@ -1,20 +1,31 @@
+// Styles for TodoListComponent
 .todo-list
-  h2
-    font-size: 24px
-    margin-bottom: 20px
+  list-style: none
+  padding: 0
+  margin: 0
 
-  ul
-    list-style: none
-    padding: 0
+li
+  padding: 10px
+  margin: 5px 0
+  background-color: #f0f0f0
+  border-radius: 4px
+  display: flex
+  justify-content: space-between
+  align-items: center
 
-    li
-      display: flex
-      align-items: center
-      margin-bottom: 10px
-      font-size: 18px
+  &:hover
+    background-color: #e0e0e0
 
-      &.completed
-        text-decoration: line-through
+.task-text
+  font-size: 1rem
 
-      input[type='checkbox']
-        margin-right: 10px
+.delete-btn
+  background-color: #ff5c5c
+  border: none
+  padding: 5px 10px
+  color: white
+  border-radius: 4px
+  cursor: pointer
+
+  &:hover
+    background-color: #e65555

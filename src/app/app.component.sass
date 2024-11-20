@@ -1,6 +1,35 @@
+// General styles for the app
+body
+  font-family: Arial, sans-serif
+  margin: 0
+  padding: 0
+  background-color: #f9f9f9
+  color: #333
+
+h1
+  text-align: center
+  margin: 20px 0
+  font-size: 2rem
+  color: #5c67ff
+
 .app-container
-  max-width: 600px
-  margin: 0 auto
+  display: flex
+  justify-content: center
+  align-items: flex-start
+  gap: 20px
+  width: 90%
+  max-width: 1000px
+  margin: 20px auto
   padding: 20px
-  background-color: #f4f4f9
+  background-color: #ffffff
+  border: 1px solid #e0e0e0
   border-radius: 8px
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+
+// Column styles
+.column
+  flex: 1
+  padding: 10px
+
+  &.left
+    border-right: 1px solid #e0e0e0
