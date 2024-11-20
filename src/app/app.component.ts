@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
@@ -8,12 +8,20 @@ import { TodoListComponent } from './todo-list/todo-list.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass'],
   standalone: true,
-  imports: [RouterModule, AddTaskComponent, TodoListComponent] // Asegúrate de importar RouterModule aquí
+  imports: [RouterModule, AddTaskComponent, TodoListComponent]
 })
-export class AppComponent {
-  tasks: string[] = []; // Define la lista de tareas
+export class AppComponent implements OnInit {
+  tasks: string[] = [];
+
+  ngOnInit() {
+    const savedTasks = localStorage.getItem('tasks');
+    if (savedTasks) {
+      this.tasks = JSON.parse(savedTasks);
+    }
+  }
 
   onTaskAdded(task: string) {
     this.tasks.push(task);
+    localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }
 }
