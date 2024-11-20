@@ -1,5 +1,5 @@
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-todo-list',
@@ -8,6 +8,24 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [CommonModule]
 })
-export class TodoListComponent {
+export class TodoListComponent implements OnInit {
   @Input() tasks: string[] = [];
+  selectedTaskIndices: number[] = [];
+
+  ngOnInit() {
+    const savedSelectedIndices = localStorage.getItem('selectedTaskIndices');
+    if (savedSelectedIndices) {
+      this.selectedTaskIndices = JSON.parse(savedSelectedIndices);
+    }
+  }
+
+  toggleTaskSelection(index: number) {
+    const selectedIndex = this.selectedTaskIndices.indexOf(index);
+    if (selectedIndex === -1) {
+      this.selectedTaskIndices.push(index);
+    } else {
+      this.selectedTaskIndices.splice(selectedIndex, 1);
+    }
+    localStorage.setItem('selectedTaskIndices', JSON.stringify(this.selectedTaskIndices));
+  }
 }

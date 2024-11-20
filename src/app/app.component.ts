@@ -29,4 +29,5 @@ export class AppComponent implements OnInit {
     this.tasks = [];
     localStorage.removeItem('tasks');
   }
+
 }
