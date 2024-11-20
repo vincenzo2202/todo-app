@@ -1,12 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { AddTaskComponent } from './add-task/add-task.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.sass'
+  styleUrls: ['./app.component.sass'],
+  standalone: true,
+  imports: [RouterModule, AddTaskComponent, TodoListComponent] // Asegúrate de importar RouterModule aquí
 })
 export class AppComponent {
-  title = 'todo-app';
+  tasks: string[] = []; // Define la lista de tareas
+
+  onTaskAdded(task: string) {
+    this.tasks.push(task);
+  }
 }
