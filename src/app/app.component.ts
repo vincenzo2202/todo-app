@@ -5,10 +5,10 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [RouterModule, AddTaskComponent, TodoListComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass'],
-  standalone: true,
-  imports: [RouterModule, AddTaskComponent, TodoListComponent]
 })
 export class AppComponent implements OnInit {
   tasks: string[] = [];
