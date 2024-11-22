@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router'; // Importa RouterModule
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { AddTaskComponent } from './add-task/add-task.component'; // Importa tu componente
-import { TodoListComponent } from './todo-list/todo-list.component'; // Importa tu componente
+import { AddTaskComponent } from './add-task/add-task.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 @NgModule({
     imports: [
         BrowserModule,
         RouterModule.forRoot([]),
-        AddTaskComponent, // Importa tu componente
-        TodoListComponent // Importa tu componente
+        AddTaskComponent, // Importa tu componente standalone
+        TodoListComponent // Importa tu componente standalone
     ],
     providers: [],
-    // bootstrap: [AppComponent]
 })
 export class AppModule { }

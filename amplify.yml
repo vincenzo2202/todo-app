@@ -10,7 +10,7 @@ frontend:
       commands:
         - npm run build
   artifacts:
-    baseDirectory: dist/todo-app # Asegúrate de que este sea el directorio de salida correcto
+    baseDirectory: dist/todo-app/browser # Asegúrate de que este sea el directorio de salida correcto
     files:
       - '**/*'
   cache:
