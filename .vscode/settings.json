@@ -14,6 +14,10 @@
         "tab.activeBorder": "#ef0b8d",
         "iLoveWorkSpaceColors": true,
         "iLoveWorkSpaceRandom": false
+<<<<<<< HEAD
     },
     "liveServer.settings.port": 5501
+=======
+    }
+>>>>>>> dev
 }

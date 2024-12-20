@@ -2,6 +2,11 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
 
+<div style="text-align: center;">
+    <img src="./public/todo.png" style="width: 800;" />
+</div>
+ 
+
 ## Development server
 
 To start a local development server, run:

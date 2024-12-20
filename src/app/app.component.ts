@@ -1,12 +1,33 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { AddTaskComponent } from './add-task/add-task.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RouterModule, AddTaskComponent, TodoListComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.sass'
+  styleUrls: ['./app.component.sass'],
 })
-export class AppComponent {
-  title = 'todo-app';
+export class AppComponent implements OnInit {
+  tasks: string[] = [];
+
+  ngOnInit() {
+    const savedTasks = localStorage.getItem('tasks');
+    if (savedTasks) {
+      this.tasks = JSON.parse(savedTasks);
+    }
+  }
+
+  onTaskAdded(task: string) {
+    this.tasks.push(task);
+    localStorage.setItem('tasks', JSON.stringify(this.tasks));
+  }
+
+  deleteAllTasks() {
+    this.tasks = [];
+    localStorage.removeItem('tasks');
+  }
+
 }
